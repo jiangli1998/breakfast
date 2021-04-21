@@ -5,7 +5,7 @@
 
     <!-- 轮播图 -->
     <mt-swipe class="swipe" style="height:200px">
-      <mt-swipe-item><img src="../assets/200.png"></mt-swipe-item>
+      <mt-swipe-item><img src="../assets/home/l1.jpg"></mt-swipe-item>
       <mt-swipe-item><img src="../assets/xing02.png"></mt-swipe-item>
       <mt-swipe-item><img src="../assets/200.png"></mt-swipe-item>
       <mt-swipe-item><img src="../assets/uname.png"></mt-swipe-item>

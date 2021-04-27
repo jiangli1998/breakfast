@@ -2,8 +2,8 @@
   <div>
     <!-- 顶部 -->
     <mt-header class="top">
-      <router-link to="/" slot="left">
-        <mt-button icon="back" style="color:white;font-size:16px">返回首页</mt-button>
+      <router-link to="/wode" slot="left">
+        <mt-button icon="back" style="color:white;font-size:16px">返回</mt-button>
       </router-link>
     </mt-header>
 

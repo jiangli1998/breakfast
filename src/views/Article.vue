@@ -11,36 +11,57 @@
     <div class="list">
       <!-- 标题 -->
       <div class="question-header">
-        <div class="question-header-title">
-          营养小常识
-        </div>
-        <div class="question-header-datetime">
-          李艳鸣
-        </div>
+        <!-- 文章题目 -->
+        <div class="question-header-title">{{article.title}}</div>
+        <!-- 文章作者 -->
+        <div class="question-header-datetime">作者：{{article.writer}}</div>
       </div>
       <!-- 作者信息 -->
       <div class="author-info">
-          <img src="../assets/logo.png" class="author-info-avatar">
+          <img :src="article.pic" class="author-info-avatar">
           <div class="author-info-detail">
-              <div class="author-info-nickname">2021年4月20日</div>
+              <!-- 发表时间 -->
+              <div class="author-info-nickname">{{article.time}}</div>
               <div class="author-info-badge">
-                  转载于<mt-badge type="primary" size="small">新闻网</mt-badge>
+                  转载自 <mt-badge type="primary" size="small">{{article.turnload}}</mt-badge>
               </div>
           </div>
       </div>
       <!-- 内容 -->
       <div class="question-content">
-          <div class="rich-content">
-              一年之计在于春，一天之计在于晨，一天能量的摄入从早餐开始。随着现生活节奏的加快，夜生活的丰富，很多人的早餐就简单的对付一下，或者不吃，想减肥的朋友还说这样可以减肥呢。有条新闻大家应该还记着，一个女孩长期不吃早餐，最后得了胆结石，胆囊切除，取出了300多颗，数量相当的惊人，结果也是令人反省。我们的身体极其复杂，除了婴儿时期仅需要母乳外，没有任何单一的食物能包含人体所需最佳配比的全部营养。因此，我们的饮食应包括各种有营养的新鲜食物，才能保持身体健康。日常饮食中应含有小麦、玉米、大米、土豆等多种主食，外加不同的豆类、大量的新鲜水果和蔬菜以及肉类、鱼类、蛋类和奶类食品等动物来源的食品。尽量选择粗粮食品，如未经加工的玉米、小米、燕麦、小麦、糙米等。这些食物富含宝贵的纤维，能增加饱腹感。选择零食时，应以可生食的蔬菜、不加盐的干果和新鲜水果代替高糖、高脂、高盐食品。
-          </div>
+          <!-- 内容图片 -->
+          <img :src="article.pic" class="author-content-pic">
+          <!-- 文章内容 -->
+          <div class="rich-content" v-html="article.desc">{{article.desc}}</div>
       </div>
     </div>
-
-
   </div>
 </template>
-
-
+<script>
+export default {
+    data() {
+        return {
+            article:{}//存放从服务器中获取的数据
+        }
+    },
+    mounted() {
+        // 获取地址栏中由List.vue传过来的lid参数
+        let lid=this.$route.query.lid;
+        console.log(lid);
+        // 向服务器接口发送请求，访问请求的文章内容数据
+        let url=`/article?lid=${lid}`;
+        this.axios.get(url).then(result=>{
+            console.log(result);
+            // 把获取到的数据放到article中
+            this.article=result.data.result;
+            console.log(this.article);
+            // 获取文章的图片地址
+            this.article.pic=require(`../assets/list/${this.article.pic}`);
+            console.log(this.article.pic);
+        });
+    },
+}
+</script>
 <style>
 .article{
     background: #f6f6f6;
@@ -69,7 +90,6 @@
     padding: 8px 10px;
     background: #fff;
     box-shadow: 0 1px 3px rgba(26,26,26,.1);
-    
 }
 .author-info-avatar{
     width:40px;
@@ -86,11 +106,13 @@
 .author-info-badge{
     font-size: 14px;
 }
+.author-content-pic{
+    width: 100%;
+}
 .question-content {
     padding: 10px;
     background-color:#fff;
 }
-
 .rich-content p{
     padding: 5px 0;
     line-height: 1.7;

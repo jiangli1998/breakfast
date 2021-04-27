@@ -7,7 +7,7 @@
       <!-- 登录 注册 -->
       <div class="login classColor" >
         <div class="yuan"></div>
-      <div class="mar">用户嘻嘻嘻</div>
+      <router-link to="/register"><div class="mar">用户嘻嘻嘻</div></router-link>
       </div>
       <!-- 菜篮子 -->
       <div class="classColor collect">
@@ -98,9 +98,13 @@ export default {
   #color{
     background-color: #e9e9e9;
   }
-  /* .search{
-    height: 55px !important;
-  } */
+  a{
+  text-decoration: none;
+  color: black;
+}
+.router-link-active{
+  text-decoration: none;
+}
   /* 搜索框 */
   .search{
     height: 50px !important;

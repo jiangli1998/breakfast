@@ -5,34 +5,35 @@
 
     <!-- 轮播图 -->
     <mt-swipe class="swipe" style="height:200px">
-      <mt-swipe-item><img src="../assets/home/l1.jpg"></mt-swipe-item>
-      <mt-swipe-item><img src="../assets/xing02.png"></mt-swipe-item>
-      <mt-swipe-item><img src="../assets/200.png"></mt-swipe-item>
-      <mt-swipe-item><img src="../assets/uname.png"></mt-swipe-item>
+      <mt-swipe-item><img src="../assets/swiper1.png"></mt-swipe-item>
+      <mt-swipe-item><img src="../assets/swiper2.png"></mt-swipe-item>
+      <mt-swipe-item><img src="../assets/swiper3.png"></mt-swipe-item>
+      <mt-swipe-item><img src="../assets/swiper4.png"></mt-swipe-item>
+      <mt-swipe-item><img src="../assets/swiper5.png"></mt-swipe-item>
     </mt-swipe>
 
     <!-- 每日推荐 -->
     <div class="tjtitle">每日推荐</div>
     <div class="tuijian">
-      <router-link to="/detail">
+      <router-link to="/video">
         <div class="tj">
           <img src="../assets/200.png">
           <p>家常鱼香肉丝</p>
         </div>
       </router-link>
-      <router-link to="/detail">
+      <router-link to="/video">
         <div class="tj">
           <img src="../assets/200.png">
           <p>家常鱼香肉丝</p>
         </div>
       </router-link>
-      <router-link to="/detail">
+      <router-link to="/video">
         <div class="tj">
           <img src="../assets/200.png">
           <p>家常鱼香肉丝</p>
         </div>
       </router-link>
-      <router-link to="/detail">
+      <router-link to="/video">
         <div class="tj">
           <img src="../assets/200.png">
           <p>家常鱼香肉丝</p>
@@ -43,25 +44,25 @@
     <!-- 优秀菜谱 -->
     <div class="tjtitle">优秀菜谱</div>
     <div class="tuijian">
-      <router-link to="/detail">
+      <router-link to="/word">
         <div class="tj">
           <img src="../assets/200.png">
           <p>家常鱼香肉丝</p>
         </div>
       </router-link>
-      <router-link to="/detail">
+      <router-link to="/word">
         <div class="tj">
           <img src="../assets/200.png">
           <p>家常鱼香肉丝</p>
         </div>
       </router-link>
-      <router-link to="/detail">
+      <router-link to="/word">
         <div class="tj">
           <img src="../assets/200.png">
           <p>家常鱼香肉丝</p>
         </div>
       </router-link>
-      <router-link to="/detail">
+      <router-link to="/word">
         <div class="tj">
           <img src="../assets/200.png">
           <p>家常鱼香肉丝</p>
@@ -72,25 +73,25 @@
     <!-- 专辑推荐 -->
     <div class="tjtitle">专辑推荐</div>
     <div class="zj">
-      <router-link to="/list">
+      <router-link to="/word">
         <div class="zhuanji">
           <img src="../assets/200.png">
           <div class="texts">一周热门菜谱</div>
         </div>
       </router-link>
-      <router-link to="/list">
+      <router-link to="/word">
         <div class="zhuanji">
           <img src="../assets/200.png">
           <div class="texts">一周热门菜谱</div>
         </div>
       </router-link>
-      <router-link to="/list">
+      <router-link to="/word">
         <div class="zhuanji">
           <img src="../assets/200.png">
           <div class="texts">一周热门菜谱</div>
         </div>
       </router-link>
-      <router-link to="/list">
+      <router-link to="/word">
         <div class="zhuanji">
           <img src="../assets/200.png">
           <div class="texts">一周热门菜谱</div>
@@ -115,8 +116,8 @@
         <img v-else src="../assets/classify_0.png" slot="icon">
         菜谱分类
       </mt-tab-item>
-      <mt-tab-item id="me">
-        <img v-if="selected=='me'" src="../assets/me_1.png" slot="icon">
+      <mt-tab-item id="wode">
+        <img v-if="selected=='wode'" src="../assets/me_1.png" slot="icon">
         <img v-else src="../assets/me_0.png" slot="icon">
         我的
       </mt-tab-item>
@@ -148,6 +149,9 @@ export default {
 }
 </script>
 <style scoped>
+.swipe img{
+  width: 100%;
+}
 a{
   text-decoration: none;
   color: black;

@@ -1,26 +1,46 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
 // 系统界面
 import Classify from '../views/Classify.vue'
-import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
-import Article from "../views/Article.vue"
 import List from "../views/List.vue"
+import Article from "../views/Article.vue"
 
 import Unique from '../views/Unique.vue'
 import Detail from '../views/Detail.vue'
 
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
 import ToLogin from "../views/ToLogin.vue"
 import Wode  from "../views/Wode.vue"
 
-// 测试界面
-import Infinite from '../testing/Infinite.vue'
+import Home from '../views/Home.vue'
+import Video from "../views/Video.vue"
+import Word from "../views/Word.vue"
+
+import tabbar from "../testing/tabbar.vue"
+
 
 Vue.use(VueRouter)
 
 const routes = [
-  // 系统界面
+  // 测试
+  {
+    path: '/tabbar',
+    name: 'tabbar',
+    component:tabbar
+  },
+
+  {
+    path: '/video',
+    name: 'Video',
+    component:Video
+  },
+  {
+    path: '/word',
+    name: 'Word',
+    component:Word
+  },
   {
     path: '/list',
     name: 'List',
@@ -67,25 +87,11 @@ const routes = [
     name: 'Login',
     component: Login
   },
-  // 测试界面
-  {
-    path: '/infinite',
-    name: 'Infinite',
-    component: Infinite
-  },
   {
     path: '/',
     name: 'Home',
     component: Home
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({

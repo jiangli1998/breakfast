@@ -56,7 +56,7 @@
 .login{
   height: 100px;
   padding: 20px;
-  /* margin-top: 30px; */
+
 }
 .mar{
   height: 20px;
@@ -71,6 +71,7 @@
   width: 80px;
   background-color: #d9d9d9;
   border-radius: 50%;
+    margin-top: 25px;
 }
 .collect{
   height: 120px;
